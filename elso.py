@@ -16,3 +16,18 @@ jatek_szam = 0
 nem_talaldBD = 0
  
 kitalalando_szam = szamok[random.randint(len(szamok))]
+
+tipp = int(input("Tipped? (egész szám):"))
+
+while(tipp != kitalalando_szam):
+    tipp = int(input("Tipped? (egész szám):"))
+    
+print("Eltaláltad a kitalálandó számot!")
+
+folytatas = input("Akarsz-e még játszani? [I/N]")
+
+if (folytatas == "I"):
+    # ????
+    aa=1
+else:
+    exit()
