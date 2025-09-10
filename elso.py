@@ -11,3 +11,10 @@ for i in range(100):
 #Ellenőrzés
 print(szamok)
 
+#EGYSZÁM JÁTÉK
+jatek_szam = 0
+nem_talaldBD = 0
+ 
+kitalalando_szam = szamok[random.randint(len(szamok))]
+
+ 
