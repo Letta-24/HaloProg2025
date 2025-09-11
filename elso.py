@@ -2,3 +2,35 @@ import random
 
 #Lista létrehozása
 szamok = []
+
+#Lista feltöltése 100 db random kétjegyű egész számmal
+for i in range(100):
+    szam = random.randint(10, 99)
+    szamok.append(szam)
+    
+#Ellenőrzés
+print(szamok)
+
+#EGYSZÁM JÁTÉK
+jatek_szam = 0
+nem_talaldBD = 0
+ 
+kitalalando_szam = szamok[random.randint(0, len(szamok))]
+
+#A JÁTÉK ------------------------------------------------
+kitalalando_szam = 12
+jatszol = True
+
+while(jatszol):
+    
+    tipp = int(input("Tipped? (egész szám):"))
+
+    while(tipp != kitalalando_szam):
+        tipp = int(input("Tipped? (egész szám):"))
+    
+    print("Eltaláltad a kitalálandó számot!")
+    
+    folytatas = input("Akarsz-e még játszani? [I/N]")
+    if (folytatas == "N"):
+        jatszol = False
+        
