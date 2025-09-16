@@ -11,14 +11,18 @@ while len(szamok) != 40:
 #ell
 print(szamok) 
 
-#EGYSZÁM JáTÉK
+#Változok létrehozzása
 jatek_szam=0
 nem_talalDB=0
-
+#A kitalálandó szám kiválasztása a listából
 kitalalando_szam=szamok[random.randint(0, len(szamok))]
+
+kitalalando_szam = 12
+
 jatszol=True
 while (jatszol):
-    tipp_sz=input("tipped?: ").strip()
+    jatek_szam +=1
+    tipp_sz=input("tipped? (egész szám): ").strip()
     if (tipp_sz.isdecimal()):
         tipp=int(tipp_sz)
     else:
@@ -30,9 +34,11 @@ while (jatszol):
             print("A kitalálandó szám nagyobb!")
         else:
             print("A kitalálandó szám kisebb!")
-        tipp_sz=input("tipped?: ").strip()
+        tipp_sz=input("tipped? (egész szám)\n[kilépés\'X\' karakterrel]: ").strip()
         if (tipp_sz.isdecimal()):
             tipp=int(tipp_sz)
+        elif tipp_sz == 'X':
+            exit()
         else:
             print("egész számmal játsz")
             continue
