@@ -11,18 +11,15 @@ while len(szamok) != 40:
 #ell
 print(szamok) 
 
-#Változok létrehozzása
-jatek_szam=0
+#Változok létrehozzása a statisztikához
+jatek_szam=1
 nem_talalDB=0
 #A kitalálandó szám kiválasztása a listából
 kitalalando_szam=szamok[random.randint(0, len(szamok))]
 
-kitalalando_szam = 12
-
 jatszol=True
 while (jatszol):
-    jatek_szam +=1
-    tipp_sz=input("tipped? (egész szám): ").strip()
+    tipp_sz=input("\ntipped?: ").strip()
     if (tipp_sz.isdecimal()):
         tipp=int(tipp_sz)
     else:
@@ -30,21 +27,33 @@ while (jatszol):
         continue
     
     while (tipp!=kitalalando_szam):
-        if (tipp < kitalalando_szam):
-            print("A kitalálandó szám nagyobb!")
-        else:
-            print("A kitalálandó szám kisebb!")
-        tipp_sz=input("tipped? (egész szám)\n[kilépés\'X\' karakterrel]: ").strip()
+        nem_talaltDB +=1 
+        
+        if (tipp == 123):
+            pass
+        elif (tipp < kitalalando_szam):
+            print("kitalálandó szám nagyobb")
+        elif (tipp > kitalalando_szam):
+            print("kitalálandó szám kisebb")
+            
+        tipp_sz=input("\ntipped? (egész szám)[Kilépés \'X\' karakterrel]: ").strip()
+
         if (tipp_sz.isdecimal()):
             tipp=int(tipp_sz)
         elif tipp_sz == 'X':
+            print(f"\n{jatek_szam} db szám kitalálásához {nem_talaltDB}-szer próbálkozott rosszul")
             exit()
         else:
             print("egész számmal játsz")
+            tipp=123
             continue
         
     print("eltaláltad")
     
     folytat=input("akarsz meg jatszani? [I/N]")
+    
     if (folytat=="N"):
         jatszol=False
+        print(f"\n{jatek_szam} db szám kitalálásához {nem_talaltDB}-szer próbálkozott rosszul")
+    elif (folytat=="I"):
+        jatek_szam += 1
